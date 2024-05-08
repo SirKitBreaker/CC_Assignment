@@ -1,0 +1,11 @@
+{
+    "name": "s3-monitor-lambda",
+    "version": "1.0.0",
+    "description": "Lambda function to monitor an S3 bucket and send emails",
+    "main": "index.js",
+    "dependencies": {
+        "aws-sdk": "^2.976.0",
+        "nodemailer": "^6.9.13"
+    },
+    "type": "module"
+}
