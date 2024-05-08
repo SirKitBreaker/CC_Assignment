@@ -10,7 +10,7 @@ const uploadedFiles = [];
 export const handler = async (event) => {
   if (event.Records) {
     console.log("S3 triggered");
-    await s3Handler('cc-assignment-ss');
+    await s3Handler('bucket name');
   } else if (event.source == "aws.events") {
     console.log("Email triggered");
     emailHandler();
@@ -74,8 +74,8 @@ function sendEmailWithAttachments(jsonData) {
 
   return new Promise((resolve, reject) => {
     transporter.sendMail({
-      from: "saahil@cklabs.com", 
-      to: "sssahil4713@gmail.com", 
+      from: "Sender Email", 
+      to: "Recipient Email", 
       subject: "Files in S3 bucket",
       text: "Here are the uploaded files",
       attachments: [{ content: `${jsonData}`, filename: "/tmp/uploaded_files.json" }],
